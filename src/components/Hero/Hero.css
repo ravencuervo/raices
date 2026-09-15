@@ -1,0 +1,196 @@
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* --- Imagen de fondo --- */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Overlay sólido oscuro para legibilidad — sin gradiente */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 14, 6, 0.62);
+}
+
+/* --- Contenido --- */
+.hero__container {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  width: 100%;
+  padding: 7rem 2rem 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+/* --- Animaciones de entrada (JS-driven) --- */
+.hero__anim {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.hero__anim--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Badge --- */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  background-color: var(--color-vino);
+  color: var(--color-crema);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 100px;
+}
+
+.hero__badge i {
+  font-size: 0.8rem;
+}
+
+/* --- Título --- */
+.hero__title {
+  font-size: clamp(3.2rem, 9vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 0.92;
+  color: var(--color-crema);
+  text-transform: uppercase;
+}
+
+/* --- Subtítulo --- */
+.hero__subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+}
+
+/* --- Tagline --- */
+.hero__tagline {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-crema);
+  opacity: 0.88;
+}
+
+/* --- Descripción --- */
+.hero__desc {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-crema-oscura);
+}
+
+/* --- CTAs --- */
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.hero__btn {
+  padding: 0.85rem 2rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+}
+
+.hero__btn--primary {
+  background-color: var(--color-vino);
+  color: var(--color-crema);
+  border: 2px solid var(--color-vino);
+}
+
+.hero__btn--primary:hover {
+  background-color: var(--color-magenta);
+  border-color: var(--color-magenta);
+  transform: translateY(-2px);
+}
+
+.hero__btn--secondary {
+  background-color: transparent;
+  color: var(--color-crema);
+  border: 2px solid var(--color-crema);
+}
+
+.hero__btn--secondary:hover {
+  background-color: var(--color-crema);
+  color: var(--color-oscuro);
+  transform: translateY(-2px);
+}
+
+/* --- Scroll indicator --- */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: var(--color-crema);
+  font-size: 1.4rem;
+  opacity: 0.6;
+  animation: bounceDown 2s ease-in-out infinite;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .hero__container {
+    padding: 6rem 1.5rem 4rem;
+    gap: 0.9rem;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__title {
+    font-size: 2.8rem;
+  }
+}

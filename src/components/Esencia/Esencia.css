@@ -1,0 +1,112 @@
+/* ============================================================
+   ESENCIA
+   ============================================================ */
+
+.esencia {
+  background-color: var(--color-tierra);
+  padding: 6rem 2rem;
+}
+
+.esencia__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* --- Columna texto --- */
+.esencia__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.esencia__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+}
+
+.esencia__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-crema);
+  text-transform: uppercase;
+}
+
+.esencia__parrafo {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(245, 237, 214, 0.88);
+}
+
+.esencia__cita {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-crema);
+  border-left: 3px solid var(--color-dorado);
+  padding-left: 1.2rem;
+}
+
+/* --- Columna conceptos --- */
+.esencia__conceptos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.esencia__concepto {
+  background-color: rgba(44, 26, 14, 0.35);
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  border-radius: 2px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.esencia__concepto:hover {
+  background-color: rgba(44, 26, 14, 0.55);
+  transform: translateY(-3px);
+}
+
+.esencia__concepto-icon {
+  font-size: 1.8rem;
+  color: var(--color-dorado);
+}
+
+.esencia__concepto-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-crema);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .esencia__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .esencia {
+    padding: 4rem 1.5rem;
+  }
+
+  .esencia__conceptos {
+    grid-template-columns: 1fr 1fr;
+  }
+}

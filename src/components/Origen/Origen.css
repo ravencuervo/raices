@@ -1,0 +1,165 @@
+/* ============================================================
+   ORIGEN
+   ============================================================ */
+
+.origen {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- Fondo --- */
+.origen__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.origen__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Overlay sólido oscuro sin gradiente */
+.origen__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 14, 6, 0.75);
+}
+
+/* --- Contenedor --- */
+.origen__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+
+/* --- Bloque ubicación --- */
+.origen__ubicacion {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.origen__ubicacion-icon {
+  font-size: 3rem;
+  color: var(--color-vino);
+}
+
+.origen__lugar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.origen__lugar-linea {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-crema-oscura);
+}
+
+.origen__lugar-linea--grande {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color-crema);
+  letter-spacing: 0.12em;
+}
+
+.origen__lugar-linea--pais {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-dorado);
+}
+
+/* --- Texto --- */
+.origen__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-crema);
+  line-height: 1;
+}
+
+.origen__desc {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(245, 237, 214, 0.82);
+  max-width: 640px;
+}
+
+/* --- Stats --- */
+.origen__stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.origen__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.origen__stat i {
+  font-size: 1.8rem;
+  color: var(--color-dorado);
+}
+
+.origen__stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-crema-oscura);
+}
+
+.origen__stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(245, 237, 214, 0.25);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .origen__ubicacion {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .origen__lugar {
+    align-items: center;
+  }
+
+  .origen__lugar-linea--grande {
+    font-size: 1.6rem;
+  }
+
+  .origen__stat-divider {
+    display: none;
+  }
+
+  .origen__stats {
+    gap: 1.5rem;
+  }
+}

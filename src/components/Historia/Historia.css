@@ -1,0 +1,144 @@
+/* ============================================================
+   HISTORIA
+   ============================================================ */
+
+.historia {
+  background-color: var(--color-crema);
+  padding: 6rem 2rem;
+}
+
+.historia__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* --- Imagen --- */
+.historia__imagen {
+  position: relative;
+}
+
+.historia__img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+}
+
+.historia__img-badge {
+  position: absolute;
+  bottom: -1.2rem;
+  right: -1.2rem;
+  background-color: var(--color-vino);
+  color: var(--color-crema);
+  padding: 0.85rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.historia__img-badge i {
+  font-size: 0.9rem;
+}
+
+/* --- Contenido --- */
+.historia__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.historia__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-tierra);
+}
+
+.historia__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-oscuro);
+  text-transform: uppercase;
+}
+
+.historia__texto {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--color-marron);
+}
+
+/* --- Pilares --- */
+.historia__pilares {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.historia__pilar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-marron);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.historia__pilar i {
+  font-size: 1rem;
+  color: var(--color-tierra);
+  flex-shrink: 0;
+}
+
+/* --- Frase destacada --- */
+.historia__frase {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-vino);
+  border-left: 3px solid var(--color-vino);
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .historia__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .historia__img {
+    height: 360px;
+  }
+
+  .historia__img-badge {
+    right: 0;
+    bottom: -1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .historia {
+    padding: 4rem 1.5rem;
+  }
+
+  .historia__pilares {
+    grid-template-columns: 1fr;
+  }
+}

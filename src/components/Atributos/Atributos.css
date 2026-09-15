@@ -1,0 +1,113 @@
+/* ============================================================
+   ATRIBUTOS
+   ============================================================ */
+
+.atributos {
+  background-color: var(--color-oscuro);
+  padding: 6rem 2rem;
+}
+
+.atributos__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* --- Header --- */
+.atributos__header {
+  text-align: center;
+}
+
+.atributos__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+  margin-bottom: 0.75rem;
+}
+
+.atributos__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-crema);
+}
+
+/* --- Grid de cards --- */
+.atributos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* --- Card --- */
+.atributos__card {
+  background-color: #3D2510;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  border-radius: 2px;
+  transition: transform var(--transition-base), background-color var(--transition-base);
+}
+
+.atributos__card:hover {
+  transform: translateY(-6px);
+  background-color: #4A2E14;
+}
+
+/* Icono */
+.atributos__icon-wrapper {
+  width: 72px;
+  height: 72px;
+  background-color: var(--color-vino);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.atributos__icon {
+  font-size: 1.8rem;
+  color: var(--color-crema);
+}
+
+/* Título de la card */
+.atributos__card-title {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-crema);
+}
+
+/* Descripción */
+.atributos__card-desc {
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(245, 237, 214, 0.72);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .atributos__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 480px) {
+  .atributos {
+    padding: 4rem 1.5rem;
+  }
+}
