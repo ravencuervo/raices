@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import ProductoCard from './ProductoCard';
+import ProductoModal from './ProductoModal';
 import './Productos.css';
 
 const productos = [
   {
+    id: 'papa',
     imagen: '/images/portada1.png',
+    imagenPlato: '/images/plato_chips_papa.jpg',
     nombre: 'PAPA',
     tipo: 'CHIPS NATURALES',
     descripcion:
@@ -17,7 +21,9 @@ const productos = [
     ],
   },
   {
-    imagen: '/images/portada2.jpg',
+    id: 'oca',
+    imagen: '/images/portada3.png',
+    imagenPlato: '/images/plato_chips_oca.jpg',
     nombre: 'OCA',
     tipo: 'CHIPS NATURALES',
     descripcion:
@@ -33,6 +39,13 @@ const productos = [
 
 function Productos() {
   const sectionRef = useScrollAnimation();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activePlato, setActivePlato] = useState('papa');
+
+  const handleOpenPlato = (id) => {
+    setActivePlato(id);
+    setModalOpen(true);
+  };
 
   return (
     <section id="productos" className="productos" ref={sectionRef} aria-labelledby="productos-title">
@@ -57,6 +70,7 @@ function Productos() {
               {...producto}
               animClass="anim-fade-up"
               delayClass={`delay-${i + 3}`}
+              onVerMas={() => handleOpenPlato(producto.id)}
             />
           ))}
         </div>
@@ -77,6 +91,14 @@ function Productos() {
           </span>
         </div>
       </div>
+
+      {/* Modal interactivo de presentación servida (plato_chips_papa y plato_chips_oca) */}
+      <ProductoModal
+        isOpen={modalOpen}
+        activeId={activePlato}
+        onClose={() => setModalOpen(false)}
+        onSelect={(id) => setActivePlato(id)}
+      />
     </section>
   );
 }

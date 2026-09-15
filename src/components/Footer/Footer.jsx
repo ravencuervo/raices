@@ -33,7 +33,7 @@ function Footer() {
           <p className="footer__frase">"Sabores de nuestra tierra."</p>
           <address className="footer__ubicacion" aria-label="Ubicación">
             <i className="bi bi-geo-alt-fill" aria-hidden="true" />
-            <span>Huanimpampa, Paruro — Perú</span>
+            <span>Huanimpampa, Paccaritambo, Paruro — Cusco, Perú</span>
           </address>
         </div>
 
@@ -64,7 +64,6 @@ function Footer() {
               href="#"
               className="footer__social-link"
               aria-label="Instagram de Raíces Crujientes"
-              /* TODO: href="https://instagram.com/raicescrujientes" */
             >
               <i className="bi bi-instagram" aria-hidden="true" />
               <span>Instagram</span>
@@ -73,7 +72,6 @@ function Footer() {
               href="#"
               className="footer__social-link"
               aria-label="Facebook de Raíces Crujientes"
-              /* TODO: href="https://facebook.com/raicescrujientes" */
             >
               <i className="bi bi-facebook" aria-hidden="true" />
               <span>Facebook</span>
@@ -82,17 +80,35 @@ function Footer() {
               href="#"
               className="footer__social-link"
               aria-label="WhatsApp de Raíces Crujientes"
-              /* TODO: href="https://wa.me/51XXXXXXXXX" */
             >
               <i className="bi bi-whatsapp" aria-hidden="true" />
               <span>WhatsApp</span>
             </a>
           </div>
           <p className="footer__contacto-desc">
-            {/* TODO: Agregar email real */}
-            {/* contacto@raicescrujientes.pe */}
             Contáctanos para más información sobre nuestros productos andinos.
           </p>
+        </div>
+
+        {/* Columna Mapa Google Maps */}
+        <div className="footer__map-col">
+          <p className="footer__nav-title">Nuestra Ubicación</p>
+          <p className="footer__map-label">
+            <i className="bi bi-geo-alt-fill" aria-hidden="true" />
+            <span>Huanimpampa, Paccaritambo, Paruro — Cusco</span>
+          </p>
+          <div className="footer__map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.698961777084!2d-71.95589026371896!3d-13.80568700988356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916e83fcee7525bd%3A0x19273038acaa65c!2sHUANIMPAMPA!5e1!3m2!1ses-419!2spe!4v1789474209777!5m2!1ses-419!2spe"
+              width="100%"
+              height="200"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Ubicación de Huanimpampa, Paccaritambo, Paruro, Cusco"
+            />
+          </div>
         </div>
       </div>
 
@@ -102,7 +118,7 @@ function Footer() {
           © {currentYear} Raíces Crujientes — El Fruto de los Andes. Todos los derechos reservados.
         </p>
         <p className="footer__made">
-          Huanimpampa, Paruro, Perú 🇵🇪
+          Huanimpampa, Paccaritambo, Paruro, Cusco — Perú 🇵🇪
         </p>
       </div>
     </footer>

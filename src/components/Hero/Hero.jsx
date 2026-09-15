@@ -24,7 +24,7 @@ function Hero() {
       {/* Imagen de fondo con overlay oscuro sólido */}
       <div className="hero__bg">
         <img
-          src="/images/portada1.png"
+          src="/images/portada5.jpg"
           alt="Paisaje andino peruano con cultivos de papa nativa — Raíces Crujientes"
           className="hero__bg-img"
         />

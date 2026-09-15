@@ -11,11 +11,25 @@ import './Productos.css';
  * @param {string} props.animClass - clase de animación
  * @param {string} props.delayClass - clase de delay
  */
-function ProductoCard({ imagen, nombre, tipo, descripcion, beneficios, animClass = '', delayClass = '' }) {
+function ProductoCard({
+  imagen,
+  nombre,
+  tipo,
+  descripcion,
+  beneficios,
+  animClass = '',
+  delayClass = '',
+  onVerMas,
+}) {
   return (
     <article className={`producto-card ${animClass} ${delayClass}`}>
-      {/* Imagen con zoom en hover */}
-      <div className="producto-card__img-wrapper">
+      {/* Imagen con zoom en hover y clic para ver presentación */}
+      <div
+        className="producto-card__img-wrapper"
+        onClick={onVerMas}
+        style={{ cursor: 'pointer' }}
+        title={`Ver presentación servida de ${nombre}`}
+      >
         <img
           src={imagen}
           alt={`${nombre} ${tipo} — Raíces Crujientes`}
@@ -45,7 +59,9 @@ function ProductoCard({ imagen, nombre, tipo, descripcion, beneficios, animClass
 
         {/* CTA */}
         <button
+          type="button"
           className="producto-card__btn"
+          onClick={onVerMas}
           aria-label={`Conocer más sobre ${nombre} ${tipo}`}
         >
           CONOCER MÁS

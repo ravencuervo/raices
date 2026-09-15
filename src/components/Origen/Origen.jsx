@@ -9,7 +9,7 @@ function Origen() {
       {/* Imagen de fondo con overlay sólido */}
       <div className="origen__bg">
         <img
-          src="/images/portada1.png"
+          src="/images/paruro.jpg"
           alt="Paisaje andino de Huanimpampa, Paruro, Cusco, Perú"
           className="origen__bg-img"
         />
