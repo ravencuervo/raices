@@ -3,8 +3,8 @@ import useScrollAnimation from '../../hooks/useScrollAnimation';
 import './Comprar.css';
 
 const WHATSAPP_PHONE = '51959591453';
-const PRECIO_100 = 2.50;
-const PRECIO_300 = 7.00;
+const PRECIO_40 = 2.50;
+const PRECIO_200 = 7.00;
 
 const createWhatsAppUrl = (text) => {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
@@ -15,38 +15,23 @@ function Comprar() {
 
   // Cantidades por producto y tamaño
   // Papa
-  const [cantPapa100, setCantPapa100] = useState(1); // Pequeña 100g
-  const [cantPapa300, setCantPapa300] = useState(0); // Grande 300g
+  const [cantPapa40, setCantPapa40] = useState(1);   // Pequeña 40g
+  const [cantPapa200, setCantPapa200] = useState(0); // Grande 200g
   // Oca
-  const [cantOca100, setCantOca100] = useState(0);   // Pequeña 100g
-  const [cantOca300, setCantOca300] = useState(0);   // Grande 300g
+  const [cantOca40, setCantOca40] = useState(0);     // Pequeña 40g
+  const [cantOca200, setCantOca200] = useState(0);   // Grande 200g
 
   const [tipoCliente, setTipoCliente] = useState('personal'); // 'personal' | 'mayorista'
   const [notas, setNotas] = useState('');
 
   // Total en soles
   const total =
-    cantPapa100 * PRECIO_100 +
-    cantPapa300 * PRECIO_300 +
-    cantOca100 * PRECIO_100 +
-    cantOca300 * PRECIO_300;
+    cantPapa40 * PRECIO_40 +
+    cantPapa200 * PRECIO_200 +
+    cantOca40 * PRECIO_40 +
+    cantOca200 * PRECIO_200;
 
-  const totalItems = cantPapa100 + cantPapa300 + cantOca100 + cantOca300;
-
-  // Botones de presets rápidos
-  const handleCombo100 = () => {
-    setCantPapa100(1);
-    setCantOca100(1);
-    setCantPapa300(0);
-    setCantOca300(0);
-  };
-
-  const handleCombo300 = () => {
-    setCantPapa100(0);
-    setCantOca100(0);
-    setCantPapa300(1);
-    setCantOca300(1);
-  };
+  const totalItems = cantPapa40 + cantPapa200 + cantOca40 + cantOca200;
 
   const handleComprar = () => {
     if (totalItems === 0) {
@@ -55,17 +40,17 @@ function Comprar() {
     }
 
     let lineas = [];
-    if (cantPapa100 > 0) {
-      lineas.push(`• ${cantPapa100}x Chips de Papa Nativa (100g Pequeña - S/ ${PRECIO_100.toFixed(2)}) = S/ ${(cantPapa100 * PRECIO_100).toFixed(2)}`);
+    if (cantPapa40 > 0) {
+      lineas.push(`• ${cantPapa40}x Chips de Papa Nativa (40g Pequeña - S/ ${PRECIO_40.toFixed(2)}) = S/ ${(cantPapa40 * PRECIO_40).toFixed(2)}`);
     }
-    if (cantPapa300 > 0) {
-      lineas.push(`• ${cantPapa300}x Chips de Papa Nativa (300g Grande - S/ ${PRECIO_300.toFixed(2)}) = S/ ${(cantPapa300 * PRECIO_300).toFixed(2)}`);
+    if (cantPapa200 > 0) {
+      lineas.push(`• ${cantPapa200}x Chips de Papa Nativa (200g Grande - S/ ${PRECIO_200.toFixed(2)}) = S/ ${(cantPapa200 * PRECIO_200).toFixed(2)}`);
     }
-    if (cantOca100 > 0) {
-      lineas.push(`• ${cantOca100}x Chips de Oca Andina (100g Pequeña - S/ ${PRECIO_100.toFixed(2)}) = S/ ${(cantOca100 * PRECIO_100).toFixed(2)}`);
+    if (cantOca40 > 0) {
+      lineas.push(`• ${cantOca40}x Chips de Oca Andina (40g Pequeña - S/ ${PRECIO_40.toFixed(2)}) = S/ ${(cantOca40 * PRECIO_40).toFixed(2)}`);
     }
-    if (cantOca300 > 0) {
-      lineas.push(`• ${cantOca300}x Chips de Oca Andina (300g Grande - S/ ${PRECIO_300.toFixed(2)}) = S/ ${(cantOca300 * PRECIO_300).toFixed(2)}`);
+    if (cantOca200 > 0) {
+      lineas.push(`• ${cantOca200}x Chips de Oca Andina (200g Grande - S/ ${PRECIO_200.toFixed(2)}) = S/ ${(cantOca200 * PRECIO_200).toFixed(2)}`);
     }
 
     let mensaje = `¡Hola Raíces Crujientes! 👋 Deseo realizar la compra de los siguientes productos:\n\n`;
@@ -93,7 +78,7 @@ function Comprar() {
 
         {/* Panel de Selección y Compra */}
         <div className="comprar-panel anim-fade-up delay-4">
-          {/* Columna Izquierda: Selección */}
+          {/* Columna Izquierda: Selección de Productos */}
           <div className="comprar-panel__selector">
             <div className="comprar-panel__header-row">
               <span className="comprar-panel__badge">
@@ -104,134 +89,138 @@ function Comprar() {
 
             <div className="comprar-items">
               {/* --- Item Papa --- */}
-              <div className={`comprar-item ${cantPapa100 > 0 || cantPapa300 > 0 ? 'comprar-item--selected' : ''}`}>
-                <div className="comprar-item__img-box">
-                  <img src="/images/portada1.png" alt="Chips de Papa Nativa" />
+              <div className={`comprar-item ${cantPapa40 > 0 || cantPapa200 > 0 ? 'comprar-item--selected' : ''}`}>
+                <div className="comprar-item__header-mobile">
+                  <div className="comprar-item__img-box">
+                    <img src="/images/portada1.png" alt="Chips de Papa Nativa" loading="lazy" />
+                  </div>
+                  <div className="comprar-item__info">
+                    <span className="comprar-item__tag">Papa Nativa</span>
+                    <h3 className="comprar-item__name">Chips de Papa Nativa</h3>
+                    <p className="comprar-item__desc">Crujientes, doradas y 100% naturales de Huanimpampa.</p>
+                  </div>
                 </div>
-                <div className="comprar-item__info">
-                  <span className="comprar-item__tag">Papa Nativa</span>
-                  <h3 className="comprar-item__name">Chips de Papa Nativa</h3>
-                  <p className="comprar-item__desc">Crujientes, doradas y 100% naturales de Huanimpampa.</p>
 
-                  {/* Controles de Presentaciones */}
-                  <div className="comprar-item__sizes">
-                    {/* Tamaño 100g */}
-                    <div className="comprar-size-row">
-                      <div className="comprar-size-row__label">
-                        <span className="comprar-size-badge">100g</span>
-                        <span className="comprar-size-price">S/ 2.50</span>
-                        <small className="comprar-size-tipo">Pequeña</small>
-                      </div>
-                      <div className="comprar-size-counter">
-                        <button
-                          type="button"
-                          onClick={() => setCantPapa100(Math.max(0, cantPapa100 - 1))}
-                          aria-label="Restar Papa 100g"
-                        >
-                          -
-                        </button>
-                        <span className="comprar-size-count">{cantPapa100}</span>
-                        <button
-                          type="button"
-                          onClick={() => setCantPapa100(cantPapa100 + 1)}
-                          aria-label="Sumar Papa 100g"
-                        >
-                          +
-                        </button>
-                      </div>
+                {/* Controles de Presentaciones */}
+                <div className="comprar-item__sizes">
+                  {/* Tamaño 40g */}
+                  <div className="comprar-size-row">
+                    <div className="comprar-size-row__label">
+                      <span className="comprar-size-badge">40g</span>
+                      <span className="comprar-size-price">S/ 2.50</span>
+                      <small className="comprar-size-tipo">Pequeña</small>
                     </div>
+                    <div className="comprar-size-counter">
+                      <button
+                        type="button"
+                        onClick={() => setCantPapa40(Math.max(0, cantPapa40 - 1))}
+                        aria-label="Restar Papa 40g"
+                      >
+                        -
+                      </button>
+                      <span className="comprar-size-count">{cantPapa40}</span>
+                      <button
+                        type="button"
+                        onClick={() => setCantPapa40(cantPapa40 + 1)}
+                        aria-label="Sumar Papa 40g"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
 
-                    {/* Tamaño 300g */}
-                    <div className="comprar-size-row">
-                      <div className="comprar-size-row__label">
-                        <span className="comprar-size-badge comprar-size-badge--grande">300g</span>
-                        <span className="comprar-size-price">S/ 7.00</span>
-                        <small className="comprar-size-tipo">Grande</small>
-                      </div>
-                      <div className="comprar-size-counter">
-                        <button
-                          type="button"
-                          onClick={() => setCantPapa300(Math.max(0, cantPapa300 - 1))}
-                          aria-label="Restar Papa 300g"
-                        >
-                          -
-                        </button>
-                        <span className="comprar-size-count">{cantPapa300}</span>
-                        <button
-                          type="button"
-                          onClick={() => setCantPapa300(cantPapa300 + 1)}
-                          aria-label="Sumar Papa 300g"
-                        >
-                          +
-                        </button>
-                      </div>
+                  {/* Tamaño 200g */}
+                  <div className="comprar-size-row">
+                    <div className="comprar-size-row__label">
+                      <span className="comprar-size-badge comprar-size-badge--grande">200g</span>
+                      <span className="comprar-size-price">S/ 7.00</span>
+                      <small className="comprar-size-tipo">Grande</small>
+                    </div>
+                    <div className="comprar-size-counter">
+                      <button
+                        type="button"
+                        onClick={() => setCantPapa200(Math.max(0, cantPapa200 - 1))}
+                        aria-label="Restar Papa 200g"
+                      >
+                        -
+                      </button>
+                      <span className="comprar-size-count">{cantPapa200}</span>
+                      <button
+                        type="button"
+                        onClick={() => setCantPapa200(cantPapa200 + 1)}
+                        aria-label="Sumar Papa 200g"
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* --- Item Oca --- */}
-              <div className={`comprar-item ${cantOca100 > 0 || cantOca300 > 0 ? 'comprar-item--selected' : ''}`}>
-                <div className="comprar-item__img-box">
-                  <img src="/images/portada3.png" alt="Chips de Oca Andina" />
+              <div className={`comprar-item ${cantOca40 > 0 || cantOca200 > 0 ? 'comprar-item--selected' : ''}`}>
+                <div className="comprar-item__header-mobile">
+                  <div className="comprar-item__img-box">
+                    <img src="/images/portada3.png" alt="Chips de Oca Andina" loading="lazy" />
+                  </div>
+                  <div className="comprar-item__info">
+                    <span className="comprar-item__tag">Oca Andina</span>
+                    <h3 className="comprar-item__name">Chips de Oca Andina</h3>
+                    <p className="comprar-item__desc">Toque dulce natural andino, crocante y nutritivo.</p>
+                  </div>
                 </div>
-                <div className="comprar-item__info">
-                  <span className="comprar-item__tag">Oca Andina</span>
-                  <h3 className="comprar-item__name">Chips de Oca Andina</h3>
-                  <p className="comprar-item__desc">Toque dulce natural andino, crocante y nutritivo.</p>
 
-                  {/* Controles de Presentaciones */}
-                  <div className="comprar-item__sizes">
-                    {/* Tamaño 100g */}
-                    <div className="comprar-size-row">
-                      <div className="comprar-size-row__label">
-                        <span className="comprar-size-badge">100g</span>
-                        <span className="comprar-size-price">S/ 2.50</span>
-                        <small className="comprar-size-tipo">Pequeña</small>
-                      </div>
-                      <div className="comprar-size-counter">
-                        <button
-                          type="button"
-                          onClick={() => setCantOca100(Math.max(0, cantOca100 - 1))}
-                          aria-label="Restar Oca 100g"
-                        >
-                          -
-                        </button>
-                        <span className="comprar-size-count">{cantOca100}</span>
-                        <button
-                          type="button"
-                          onClick={() => setCantOca100(cantOca100 + 1)}
-                          aria-label="Sumar Oca 100g"
-                        >
-                          +
-                        </button>
-                      </div>
+                {/* Controles de Presentaciones */}
+                <div className="comprar-item__sizes">
+                  {/* Tamaño 40g */}
+                  <div className="comprar-size-row">
+                    <div className="comprar-size-row__label">
+                      <span className="comprar-size-badge">40g</span>
+                      <span className="comprar-size-price">S/ 2.50</span>
+                      <small className="comprar-size-tipo">Pequeña</small>
                     </div>
+                    <div className="comprar-size-counter">
+                      <button
+                        type="button"
+                        onClick={() => setCantOca40(Math.max(0, cantOca40 - 1))}
+                        aria-label="Restar Oca 40g"
+                      >
+                        -
+                      </button>
+                      <span className="comprar-size-count">{cantOca40}</span>
+                      <button
+                        type="button"
+                        onClick={() => setCantOca40(cantOca40 + 1)}
+                        aria-label="Sumar Oca 40g"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
 
-                    {/* Tamaño 300g */}
-                    <div className="comprar-size-row">
-                      <div className="comprar-size-row__label">
-                        <span className="comprar-size-badge comprar-size-badge--grande">300g</span>
-                        <span className="comprar-size-price">S/ 7.00</span>
-                        <small className="comprar-size-tipo">Grande</small>
-                      </div>
-                      <div className="comprar-size-counter">
-                        <button
-                          type="button"
-                          onClick={() => setCantOca300(Math.max(0, cantOca300 - 1))}
-                          aria-label="Restar Oca 300g"
-                        >
-                          -
-                        </button>
-                        <span className="comprar-size-count">{cantOca300}</span>
-                        <button
-                          type="button"
-                          onClick={() => setCantOca300(cantOca300 + 1)}
-                          aria-label="Sumar Oca 300g"
-                        >
-                          +
-                        </button>
-                      </div>
+                  {/* Tamaño 200g */}
+                  <div className="comprar-size-row">
+                    <div className="comprar-size-row__label">
+                      <span className="comprar-size-badge comprar-size-badge--grande">200g</span>
+                      <span className="comprar-size-price">S/ 7.00</span>
+                      <small className="comprar-size-tipo">Grande</small>
+                    </div>
+                    <div className="comprar-size-counter">
+                      <button
+                        type="button"
+                        onClick={() => setCantOca200(Math.max(0, cantOca200 - 1))}
+                        aria-label="Restar Oca 200g"
+                      >
+                        -
+                      </button>
+                      <span className="comprar-size-count">{cantOca200}</span>
+                      <button
+                        type="button"
+                        onClick={() => setCantOca200(cantOca200 + 1)}
+                        aria-label="Sumar Oca 200g"
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -239,7 +228,7 @@ function Comprar() {
             </div>
           </div>
 
-          {/* Columna Derecha: Resumen de Pedido con Precios y Total */}
+          {/* Columna Derecha: Resumen de Pedido y Botón Final */}
           <div className="comprar-panel__summary">
             <h3 className="comprar-summary__title">Resumen de tu Pedido</h3>
 
@@ -248,28 +237,28 @@ function Comprar() {
                 <p className="comprar-summary__empty">Selecciona las unidades que deseas comprar.</p>
               ) : (
                 <div className="comprar-summary__list">
-                  {cantPapa100 > 0 && (
+                  {cantPapa40 > 0 && (
                     <div className="comprar-summary__line">
-                      <span>Papa Nativa (100g) x{cantPapa100}</span>
-                      <strong>S/ {(cantPapa100 * PRECIO_100).toFixed(2)}</strong>
+                      <span>Papa Nativa (40g) x{cantPapa40}</span>
+                      <strong>S/ {(cantPapa40 * PRECIO_40).toFixed(2)}</strong>
                     </div>
                   )}
-                  {cantPapa300 > 0 && (
+                  {cantPapa200 > 0 && (
                     <div className="comprar-summary__line">
-                      <span>Papa Nativa (300g) x{cantPapa300}</span>
-                      <strong>S/ {(cantPapa300 * PRECIO_300).toFixed(2)}</strong>
+                      <span>Papa Nativa (200g) x{cantPapa200}</span>
+                      <strong>S/ {(cantPapa200 * PRECIO_200).toFixed(2)}</strong>
                     </div>
                   )}
-                  {cantOca100 > 0 && (
+                  {cantOca40 > 0 && (
                     <div className="comprar-summary__line">
-                      <span>Oca Andina (100g) x{cantOca100}</span>
-                      <strong>S/ {(cantOca100 * PRECIO_100).toFixed(2)}</strong>
+                      <span>Oca Andina (40g) x{cantOca40}</span>
+                      <strong>S/ {(cantOca40 * PRECIO_40).toFixed(2)}</strong>
                     </div>
                   )}
-                  {cantOca300 > 0 && (
+                  {cantOca200 > 0 && (
                     <div className="comprar-summary__line">
-                      <span>Oca Andina (300g) x{cantOca300}</span>
-                      <strong>S/ {(cantOca300 * PRECIO_300).toFixed(2)}</strong>
+                      <span>Oca Andina (200g) x{cantOca200}</span>
+                      <strong>S/ {(cantOca200 * PRECIO_200).toFixed(2)}</strong>
                     </div>
                   )}
 
@@ -316,7 +305,6 @@ function Comprar() {
               <span>COMPRAR PRODUCTO</span>
               <i className="bi bi-arrow-right-circle-fill" aria-hidden="true" />
             </button>
-
           </div>
         </div>
 

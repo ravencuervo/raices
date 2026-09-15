@@ -1,5 +1,5 @@
 /* ============================================================
-   SECCIÓN COMPRAR PRODUCTO — Raíces Crujientes
+   SECCIÓN COMPRAR PRODUCTO — Raíces Crujientes (Responsive)
    ============================================================ */
 
 .comprar {
@@ -7,6 +7,8 @@
   padding: 90px 24px;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .comprar::before {
@@ -24,9 +26,11 @@
 
 .comprar__container {
   max-width: 1180px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 /* --- Header --- */
@@ -34,6 +38,7 @@
   text-align: center;
   max-width: 740px;
   margin: 0 auto 48px auto;
+  padding: 0 10px;
 }
 
 .comprar__eyebrow {
@@ -47,23 +52,12 @@
 }
 
 .comprar__title {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(1.85rem, 5vw, 3.2rem);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--color-oscuro);
   letter-spacing: -0.01em;
-  margin-bottom: 14px;
-}
-
-.comprar__subtitle {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--color-marron);
-}
-
-.comprar__subtitle strong {
-  color: var(--color-vino);
-  font-weight: 800;
+  margin-bottom: 8px;
 }
 
 /* --- Panel Central --- */
@@ -76,12 +70,8 @@
   grid-template-columns: 1.35fr 1fr;
   overflow: hidden;
   margin-bottom: 50px;
-}
-
-@media (max-width: 960px) {
-  .comprar-panel {
-    grid-template-columns: 1fr;
-  }
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* --- Columna Izquierda: Selector --- */
@@ -90,15 +80,8 @@
   border-right: 1px solid var(--color-crema-oscura);
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-@media (max-width: 960px) {
-  .comprar-panel__selector {
-    border-right: none;
-    border-bottom: 1px solid var(--color-crema-oscura);
-    padding: 26px 18px;
-  }
+  gap: 22px;
+  box-sizing: border-box;
 }
 
 .comprar-panel__header-row {
@@ -122,49 +105,24 @@
   border-radius: 999px;
 }
 
-.comprar-panel__presets {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.comprar-panel__btn-quick {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: var(--color-crema);
-  color: var(--color-vino);
-  border: 1px dashed var(--color-vino);
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 999px;
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-.comprar-panel__btn-quick:hover,
-.comprar-panel__btn-quick.is-active {
-  background-color: var(--color-vino);
-  color: var(--color-blanco);
-  border-style: solid;
-}
-
 .comprar-items {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 .comprar-item {
   display: flex;
-  align-items: flex-start;
-  gap: 18px;
+  flex-direction: column;
+  gap: 16px;
   background-color: var(--color-crema);
   border: 1.5px solid transparent;
   padding: 20px;
   border-radius: 18px;
   transition: all var(--transition-fast);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .comprar-item--selected {
@@ -173,14 +131,20 @@
   box-shadow: 0 6px 20px rgba(201, 151, 43, 0.16);
 }
 
+.comprar-item__header-mobile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
 .comprar-item__img-box {
-  width: 84px;
-  height: 84px;
+  width: 80px;
+  height: 80px;
   border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
   background-color: var(--color-crema-media);
-  margin-top: 2px;
 }
 
 .comprar-item__img-box img {
@@ -191,6 +155,7 @@
 
 .comprar-item__info {
   flex-grow: 1;
+  min-width: 0; /* Previene desbordamiento flex */
 }
 
 .comprar-item__tag {
@@ -214,7 +179,7 @@
   font-size: 0.82rem;
   color: var(--color-tierra);
   line-height: 1.4;
-  margin-bottom: 14px;
+  margin: 0;
 }
 
 /* Presentaciones / tamaños dentro del item */
@@ -222,6 +187,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .comprar-size-row {
@@ -232,21 +198,26 @@
   padding: 10px 14px;
   border-radius: 12px;
   border: 1px solid var(--color-crema-oscura);
+  width: 100%;
+  box-sizing: border-box;
+  gap: 10px;
 }
 
 .comprar-size-row__label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .comprar-size-badge {
   background-color: var(--color-oscuro);
   color: var(--color-crema);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 6px;
+  letter-spacing: 0.04em;
 }
 
 .comprar-size-badge--grande {
@@ -258,10 +229,11 @@
   font-size: 0.98rem;
   font-weight: 800;
   color: var(--color-oscuro);
+  white-space: nowrap;
 }
 
 .comprar-size-tipo {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--color-tierra);
   text-transform: capitalize;
 }
@@ -274,20 +246,23 @@
   padding: 4px 6px;
   border-radius: 10px;
   border: 1px solid var(--color-crema-oscura);
+  flex-shrink: 0;
 }
 
 .comprar-size-counter button {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
   background-color: var(--color-crema-media);
   color: var(--color-oscuro);
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
+  cursor: pointer;
+  user-select: none;
 }
 
 .comprar-size-counter button:hover {
@@ -297,7 +272,7 @@
 
 .comprar-size-count {
   font-weight: 800;
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: var(--color-oscuro);
   min-width: 22px;
   text-align: center;
@@ -311,12 +286,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-}
-
-@media (max-width: 960px) {
-  .comprar-panel__summary {
-    padding: 26px 18px;
-  }
+  box-sizing: border-box;
 }
 
 .comprar-summary__title {
@@ -330,6 +300,8 @@
   border: 1px solid var(--color-crema-oscura);
   border-radius: 14px;
   padding: 16px 18px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .comprar-summary__empty {
@@ -342,6 +314,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .comprar-summary__line {
@@ -352,11 +325,13 @@
   color: var(--color-oscuro);
   padding-bottom: 6px;
   border-bottom: 1px dashed var(--color-crema-oscura);
+  gap: 8px;
 }
 
 .comprar-summary__line strong {
   color: var(--color-vino);
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .comprar-summary__total-box {
@@ -384,6 +359,11 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  width: 100%;
+}
+
+.comprar-summary__field {
+  width: 100%;
 }
 
 .comprar-summary__field label {
@@ -397,6 +377,7 @@
 .comprar-summary__field select,
 .comprar-summary__field input {
   width: 100%;
+  box-sizing: border-box;
   padding: 12px 14px;
   border-radius: 10px;
   border: 1px solid var(--color-crema-oscura);
@@ -416,6 +397,7 @@
 /* --- Botón Principal COMPRAR PRODUCTO --- */
 .comprar-btn-final {
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -448,26 +430,13 @@
   transform: translateX(4px);
 }
 
-.comprar-panel__note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  color: var(--color-tierra);
-  text-align: center;
-  margin: 0;
-}
-
-.comprar-panel__note i {
-  color: var(--color-dorado);
-}
-
 /* --- Garantías --- */
 .comprar__garantias {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .comprar__garantia-item {
@@ -478,6 +447,7 @@
   padding: 20px;
   border-radius: 16px;
   border: 1px solid var(--color-crema-oscura);
+  box-sizing: border-box;
 }
 
 .comprar__garantia-item i {
@@ -499,4 +469,155 @@
   color: var(--color-tierra);
   line-height: 1.4;
   margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES (Móviles y Tablets)
+   ============================================================ */
+
+@media (max-width: 960px) {
+  .comprar-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .comprar-panel__selector {
+    border-right: none;
+    border-bottom: 1px solid var(--color-crema-oscura);
+    padding: 28px 24px;
+  }
+
+  .comprar-panel__summary {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comprar {
+    padding: 60px 16px;
+  }
+
+  .comprar__header {
+    margin-bottom: 36px;
+  }
+
+  .comprar-panel {
+    border-radius: 20px;
+    margin-bottom: 36px;
+  }
+
+  .comprar-panel__selector,
+  .comprar-panel__summary {
+    padding: 22px 18px;
+  }
+
+  .comprar-item {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .comprar-item__img-box {
+    width: 68px;
+    height: 68px;
+    border-radius: 10px;
+  }
+
+  .comprar-item__name {
+    font-size: 1.05rem;
+  }
+
+  .comprar-size-row {
+    padding: 8px 12px;
+  }
+
+  .comprar__garantias {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comprar {
+    padding: 44px 10px;
+  }
+
+  .comprar__header {
+    margin-bottom: 24px;
+  }
+
+  .comprar__title {
+    font-size: 1.85rem;
+  }
+
+  .comprar-panel {
+    border-radius: 16px;
+  }
+
+  .comprar-panel__selector,
+  .comprar-panel__summary {
+    padding: 18px 12px;
+    gap: 18px;
+  }
+
+  .comprar-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .comprar-item__header-mobile {
+    gap: 10px;
+  }
+
+  .comprar-item__img-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 8px;
+  }
+
+  .comprar-item__name {
+    font-size: 0.98rem;
+  }
+
+  .comprar-item__desc {
+    font-size: 0.76rem;
+    line-height: 1.3;
+  }
+
+  .comprar-size-row {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .comprar-size-badge {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+
+  .comprar-size-price {
+    font-size: 0.9rem;
+  }
+
+  .comprar-size-tipo {
+    display: none; /* Ocultar en pantallas muy estrechas para no saturar */
+  }
+
+  .comprar-size-counter button {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .comprar-size-count {
+    min-width: 18px;
+    font-size: 0.92rem;
+  }
+
+  .comprar-summary__total-amount {
+    font-size: 1.3rem;
+  }
+
+  .comprar-btn-final {
+    font-size: 0.95rem;
+    padding: 15px 16px;
+    letter-spacing: 0.04em;
+  }
 }

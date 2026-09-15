@@ -294,6 +294,19 @@
     padding: 4rem 1.5rem;
   }
 
+  .producto-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .producto-card__btn,
+  .producto-card__btn-comprar {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
   .productos__sellos {
     flex-direction: column;
     align-items: center;
