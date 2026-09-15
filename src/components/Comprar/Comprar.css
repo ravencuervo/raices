@@ -1,0 +1,433 @@
+/* ============================================================
+   SECCIÓN COMPRAR PRODUCTO — Raíces Crujientes
+   ============================================================ */
+
+.comprar {
+  background-color: var(--color-crema-media);
+  padding: 90px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.comprar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--color-crema-oscura) 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.comprar__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header --- */
+.comprar__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px auto;
+}
+
+.comprar__eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-tierra);
+  margin-bottom: 12px;
+}
+
+.comprar__title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--color-oscuro);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.comprar__subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-marron);
+}
+
+/* --- Panel Central --- */
+.comprar-panel {
+  background-color: var(--color-blanco);
+  border-radius: 24px;
+  border: 1px solid var(--color-crema-oscura);
+  box-shadow: 0 16px 40px rgba(44, 26, 14, 0.08);
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 920px) {
+  .comprar-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Columna Izquierda: Selector --- */
+.comprar-panel__selector {
+  padding: 36px 32px;
+  border-right: 1px solid var(--color-crema-oscura);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 920px) {
+  .comprar-panel__selector {
+    border-right: none;
+    border-bottom: 1px solid var(--color-crema-oscura);
+    padding: 28px 20px;
+  }
+}
+
+.comprar-panel__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.comprar-panel__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-oscuro);
+  background-color: var(--color-crema);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.comprar-panel__btn-quick {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-crema);
+  color: var(--color-vino);
+  border: 1px dashed var(--color-vino);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: all var(--transition-fast);
+}
+
+.comprar-panel__btn-quick:hover,
+.comprar-panel__btn-quick.is-active {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  border-style: solid;
+}
+
+.comprar-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comprar-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background-color: var(--color-crema);
+  border: 1.5px solid transparent;
+  padding: 16px;
+  border-radius: 16px;
+  transition: all var(--transition-fast);
+}
+
+.comprar-item--selected {
+  background-color: var(--color-blanco);
+  border-color: var(--color-dorado);
+  box-shadow: 0 4px 16px rgba(201, 151, 43, 0.15);
+}
+
+.comprar-item__img-box {
+  width: 74px;
+  height: 74px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--color-crema-media);
+}
+
+.comprar-item__img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comprar-item__info {
+  flex-grow: 1;
+}
+
+.comprar-item__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-vino);
+  margin-bottom: 2px;
+}
+
+.comprar-item__name {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--color-oscuro);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.comprar-item__desc {
+  font-size: 0.82rem;
+  color: var(--color-tierra);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.comprar-item__counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-crema-media);
+  padding: 6px 8px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.comprar-item__counter button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--color-blanco);
+  color: var(--color-oscuro);
+  font-weight: 800;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.comprar-item__counter button:hover {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+}
+
+.comprar-item__count {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--color-oscuro);
+  min-width: 24px;
+  text-align: center;
+}
+
+/* --- Columna Derecha: Resumen y Botón Final --- */
+.comprar-panel__summary {
+  padding: 36px 32px;
+  background-color: #FAF5EA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 920px) {
+  .comprar-panel__summary {
+    padding: 28px 20px;
+  }
+}
+
+.comprar-summary__title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-oscuro);
+}
+
+.comprar-summary__status {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-crema-oscura);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.comprar-summary__empty {
+  font-size: 0.88rem;
+  color: var(--color-tierra);
+  margin: 0;
+}
+
+.comprar-summary__picked {
+  font-size: 0.92rem;
+  color: var(--color-oscuro);
+  margin: 0;
+}
+
+.comprar-summary__picked strong {
+  color: var(--color-vino);
+}
+
+.comprar-summary__picked-combo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comprar-summary__combo-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--color-dorado);
+  color: var(--color-oscuro);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.comprar-summary__picked-combo p {
+  font-size: 0.9rem;
+  color: var(--color-oscuro);
+  font-weight: 600;
+  margin: 0;
+}
+
+.comprar-summary__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.comprar-summary__field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-marron);
+  margin-bottom: 6px;
+}
+
+.comprar-summary__field select,
+.comprar-summary__field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-crema-oscura);
+  background-color: var(--color-blanco);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: var(--color-oscuro);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.comprar-summary__field select:focus,
+.comprar-summary__field input:focus {
+  border-color: var(--color-vino);
+}
+
+/* --- Botón Principal COMPRAR PRODUCTO --- */
+.comprar-btn-final {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  padding: 18px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 8px 22px rgba(123, 45, 66, 0.28);
+}
+
+.comprar-btn-final i {
+  font-size: 1.3rem;
+  transition: transform var(--transition-fast);
+}
+
+.comprar-btn-final:hover {
+  background-color: var(--color-magenta);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(123, 45, 66, 0.38);
+}
+
+.comprar-btn-final:hover i {
+  transform: translateX(4px);
+}
+
+.comprar-panel__note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--color-tierra);
+  text-align: center;
+  margin: 0;
+}
+
+.comprar-panel__note i {
+  color: var(--color-dorado);
+}
+
+/* --- Garantías --- */
+.comprar__garantias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.comprar__garantia-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.65);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--color-crema-oscura);
+}
+
+.comprar__garantia-item i {
+  font-size: 1.6rem;
+  color: var(--color-vino);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.comprar__garantia-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-oscuro);
+  margin-bottom: 4px;
+}
+
+.comprar__garantia-item p {
+  font-size: 0.84rem;
+  color: var(--color-tierra);
+  line-height: 1.4;
+  margin: 0;
+}

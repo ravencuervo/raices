@@ -133,6 +133,15 @@ function ProductoModal({ isOpen, activeId = 'papa', onClose, onSelect }) {
             </ul>
 
             <div className="producto-modal__actions">
+              <a
+                href={`https://wa.me/51959591453?text=${encodeURIComponent(`¡Hola Raíces Crujientes! 👋 Deseo comprar ${platoActual.nombre}. ¿Me brindan detalles de precios y cómo coordinar el envío?`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="producto-modal__buy-btn"
+              >
+                <i className="bi bi-bag-check" aria-hidden="true" />
+                COMPRAR PRODUCTO
+              </a>
               <button
                 type="button"
                 className="producto-modal__switch-btn"

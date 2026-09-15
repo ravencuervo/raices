@@ -17,23 +17,24 @@ function CTA() {
         </p>
 
         <div className="cta__acciones anim-fade-up delay-4">
-          {/* WhatsApp — TODO: reemplazar href con número real */}
           <a
-            href="#"
+            href="https://wa.me/51959591453?text=%C2%A1Hola%20Ra%C3%ADces%20Crujientes!%20%F0%9F%91%8B%20Me%20gustar%C3%ADa%20hacerles%20una%20consulta%20o%20pedido."
+            target="_blank"
+            rel="noopener noreferrer"
             className="cta__btn cta__btn--primary"
             aria-label="Contáctanos por WhatsApp"
-            /* TODO: reemplazar con -> href="https://wa.me/51XXXXXXXXX?text=Hola%2C+me+interesa+conocer+m%C3%A1s+sobre+Ra%C3%ADces+Crujientes" */
           >
             <i className="bi bi-whatsapp" aria-hidden="true" />
             CONTÁCTANOS
           </a>
 
-          {/* Instagram — TODO: reemplazar href con usuario real */}
+          {/* Instagram */}
           <a
-            href="#"
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="cta__btn cta__btn--secondary"
             aria-label="Síguenos en Instagram"
-            /* TODO: reemplazar con -> href="https://instagram.com/raicescrujientes" */
           >
             <i className="bi bi-instagram" aria-hidden="true" />
             SÍGUENOS
@@ -42,14 +43,19 @@ function CTA() {
 
         {/* Íconos de redes sociales */}
         <div className="cta__social anim-fade-up delay-5" aria-label="Redes sociales">
-          {/* TODO: Agregar href reales de redes sociales */}
-          <a href="#" className="cta__social-icon" aria-label="Instagram de Raíces Crujientes">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="cta__social-icon" aria-label="Instagram de Raíces Crujientes">
             <i className="bi bi-instagram" />
           </a>
-          <a href="#" className="cta__social-icon" aria-label="Facebook de Raíces Crujientes">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="cta__social-icon" aria-label="Facebook de Raíces Crujientes">
             <i className="bi bi-facebook" />
           </a>
-          <a href="#" className="cta__social-icon" aria-label="WhatsApp de Raíces Crujientes">
+          <a
+            href="https://wa.me/51959591453?text=%C2%A1Hola%20Ra%C3%ADces%20Crujientes!%20%F0%9F%91%8B%20Deseo%20m%C3%A1s%20informaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta__social-icon"
+            aria-label="WhatsApp de Raíces Crujientes"
+          >
             <i className="bi bi-whatsapp" />
           </a>
         </div>

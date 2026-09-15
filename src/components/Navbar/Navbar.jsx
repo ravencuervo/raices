@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const navLinks = [
-  { label: 'Inicio',          href: '#inicio' },
+  { label: 'Inicio',           href: '#inicio' },
   { label: 'Nuestra Historia', href: '#historia' },
-  { label: 'Productos',       href: '#productos' },
-  { label: 'Nuestra Esencia', href: '#esencia' },
-  { label: 'Contacto',        href: '#contacto' },
+  { label: 'Productos',        href: '#productos' },
+  { label: 'Comprar',          href: '#comprar' },
+  { label: 'Nuestra Esencia',  href: '#esencia' },
+  { label: 'Contacto',         href: '#contacto' },
 ];
 
 function Navbar() {
@@ -67,12 +68,12 @@ function Navbar() {
 
         {/* CTA desktop */}
         <a
-          href="#productos"
+          href="#comprar"
           className="navbar__cta"
-          onClick={(e) => { e.preventDefault(); handleNavClick('#productos'); }}
-          aria-label="Conoce nuestros productos"
+          onClick={(e) => { e.preventDefault(); handleNavClick('#comprar'); }}
+          aria-label="Comprar producto"
         >
-          CONOCE NUESTROS PRODUCTOS
+          COMPRAR PRODUCTO
         </a>
 
         {/* Hamburguesa móvil */}
@@ -105,12 +106,12 @@ function Navbar() {
           ))}
           <li>
             <a
-              href="#productos"
+              href="#comprar"
               className="navbar__mobile-cta"
-              onClick={(e) => { e.preventDefault(); handleNavClick('#productos'); }}
+              onClick={(e) => { e.preventDefault(); handleNavClick('#comprar'); }}
               tabIndex={menuOpen ? 0 : -1}
             >
-              CONOCE NUESTROS PRODUCTOS
+              COMPRAR PRODUCTO
             </a>
           </li>
         </ul>

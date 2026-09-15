@@ -1,11 +1,12 @@
 import './Footer.css';
 
 const footerLinks = [
-  { label: 'Inicio',    href: '#inicio' },
-  { label: 'Historia',  href: '#historia' },
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Historia', href: '#historia' },
   { label: 'Productos', href: '#productos' },
-  { label: 'Esencia',   href: '#esencia' },
-  { label: 'Contacto',  href: '#contacto' },
+  { label: 'Comprar', href: '#comprar' },
+  { label: 'Esencia', href: '#esencia' },
+  { label: 'Contacto', href: '#contacto' },
 ];
 
 function Footer() {
@@ -59,9 +60,10 @@ function Footer() {
         <div className="footer__contacto">
           <p className="footer__nav-title">Encuéntranos</p>
           <div className="footer__social" aria-label="Redes sociales">
-            {/* TODO: reemplazar href="#" con enlaces reales de redes sociales */}
             <a
-              href="#"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="footer__social-link"
               aria-label="Instagram de Raíces Crujientes"
             >
@@ -69,7 +71,9 @@ function Footer() {
               <span>Instagram</span>
             </a>
             <a
-              href="#"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="footer__social-link"
               aria-label="Facebook de Raíces Crujientes"
             >
@@ -77,7 +81,9 @@ function Footer() {
               <span>Facebook</span>
             </a>
             <a
-              href="#"
+              href="https://wa.me/51959591453?text=%C2%A1Hola%20Ra%C3%ADces%20Crujientes!%20%F0%9F%91%8B%20Deseo%20hacer%20un%20pedido%20o%20consulta."
+              target="_blank"
+              rel="noopener noreferrer"
               className="footer__social-link"
               aria-label="WhatsApp de Raíces Crujientes"
             >

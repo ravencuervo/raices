@@ -3,6 +3,7 @@ import Navbar    from './components/Navbar/Navbar';
 import Hero      from './components/Hero/Hero';
 import Historia  from './components/Historia/Historia';
 import Productos from './components/Productos/Productos';
+import Comprar   from './components/Comprar/Comprar';
 import Atributos from './components/Atributos/Atributos';
 import Esencia   from './components/Esencia/Esencia';
 import Origen    from './components/Origen/Origen';
@@ -17,6 +18,7 @@ function App() {
         <Hero />
         <Historia />
         <Productos />
+        <Comprar />
         <Atributos />
         <Esencia />
         <Origen />

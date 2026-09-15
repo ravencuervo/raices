@@ -57,16 +57,26 @@ function ProductoCard({
           ))}
         </ul>
 
-        {/* CTA */}
-        <button
-          type="button"
-          className="producto-card__btn"
-          onClick={onVerMas}
-          aria-label={`Conocer más sobre ${nombre} ${tipo}`}
-        >
-          CONOCER MÁS
-          <i className="bi bi-arrow-right" aria-hidden="true" />
-        </button>
+        {/* Acciones */}
+        <div className="producto-card__actions">
+          <button
+            type="button"
+            className="producto-card__btn"
+            onClick={onVerMas}
+            aria-label={`Conocer más sobre ${nombre} ${tipo}`}
+          >
+            CONOCER MÁS
+            <i className="bi bi-arrow-right" aria-hidden="true" />
+          </button>
+          <a
+            href="#comprar"
+            className="producto-card__btn-comprar"
+            aria-label={`Comprar ${nombre}`}
+          >
+            COMPRAR PRODUCTO
+            <i className="bi bi-arrow-right" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </article>
   );
