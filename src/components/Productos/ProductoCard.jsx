@@ -57,6 +57,16 @@ function ProductoCard({
           ))}
         </ul>
 
+        {/* Presentaciones y Precios */}
+        <div className="producto-card__precios">
+          <span className="producto-card__precio-item">
+            <strong>100g</strong> (Pequeña): S/ 2.50
+          </span>
+          <span className="producto-card__precio-item">
+            <strong>300g</strong> (Grande): S/ 7.00
+          </span>
+        </div>
+
         {/* Acciones */}
         <div className="producto-card__actions">
           <button

@@ -169,6 +169,30 @@
   flex-shrink: 0;
 }
 
+/* Presentaciones y precios en tarjeta */
+.producto-card__precios {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.producto-card__precio-item {
+  background-color: var(--color-crema-media);
+  border: 1px solid var(--color-crema-oscura);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-oscuro);
+  font-weight: 500;
+}
+
+.producto-card__precio-item strong {
+  color: var(--color-vino);
+  font-weight: 800;
+}
+
 .producto-card__actions {
   display: flex;
   gap: 0.75rem;
